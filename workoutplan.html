@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plan Based on BMI</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+                margin: 0;
+                padding: 0;
+                color: white;
+                background-color: black;
+                background-size: cover; /* Adjust the background size as needed */
+                background-position: center;
+        }
+        nav {
+                text-align: center;
+                overflow: hidden;
+                padding: 10px;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+        }
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+		#c1
+		{
+			marigin-left:10px;
+			marigin-top:90px;
+		}
+		#pvr1
+		{
+		 margin-left:600px;
+		}
+		#pvr2
+		{
+		 margin-left:100px;
+		}
+		#pvr3
+		{
+		 margin-left:600px;
+		}
+		#pvr0
+		{
+		 margin-left:100px;
+		}
+		.image-container {
+            width: 20%; /* Adjust the width based on your design */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%; /* Set your desired width */
+            display: none;
+        }
+		
+		.image-container1 {
+            width: 20%; /* Adjust the width based on your design */
+            overflow: hidden;
+        }
+
+        .image-container1 img {
+            width: 100%; /* Set your desired width */
+            display: none;
+        }
+    </style>
+	
+    <script>
+        // JavaScript to handle the slideshow
+        document.addEventListener('DOMContentLoaded', function () {
+            var index = 0;
+            var images = document.querySelectorAll('#slideshow1 img');
+            var totalImages = images.length;
+
+            function showImage() {
+                images.forEach(function (img) {
+                    img.style.display = 'none';
+                });
+
+                images[index].style.display = 'block';
+                index = (index + 1) % totalImages;
+
+                setTimeout(showImage, 800); // Change image every 3 seconds (adjust as needed)
+            }
+
+            showImage();
+        });
+		
+		document.addEventListener('DOMContentLoaded', function () {
+            var index = 0;
+            var images = document.querySelectorAll('#slideshow img');
+            var totalImages = images.length;
+
+            function showImage() {
+                images.forEach(function (img) {
+                    img.style.display = 'none';
+                });
+
+                images[index].style.display = 'block';
+                index = (index + 1) % totalImages;
+
+                setTimeout(showImage, 800); // Change image every 3 seconds (adjust as needed)
+            }
+
+            showImage();
+        });
+		
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td style="padding-bottom: 0px;">
+                <video width="140" height="90" autoplay loop muted>
+                    <source src="E:\myactproject\fh.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td style="padding-left: 100px;">
+                <nav>
+                    <a href="./home.html">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./workoutplan.html">Workout Plan</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+            </td>
+        </tr>
+    </table><hr/>
+    <h1 align="center" style="color: blue">Training Based on BMI</h1><br><br>
+    <table border="2px" style="border-collapse: collapse;margin: 0%;width: auto;height: auto;" cellpadding="10px">
+        <tr>
+            <th style="background-color: orange;">For BMI Below Normal (Underweight):</th>
+            <th style="background-color: orange;">For Normal BMI:</th>
+            <th style="background-color: orange;">For BMI in Overweight Range:</th>
+            <th style="background-color: orange;">For BMI in Obese Range:</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><strong>Cardiovascular Exercise:</strong> 20-30 minutes of moderate-intensity cardio (e.g., brisk walking, cycling).</li>
+                    <li><strong>Strength Training:</strong> Bodyweight exercises focusing on full-body workouts.</li>
+                </ul>
+            </td>
+            <td>
+                
+                <ul>
+                    <li><strong>Cardiovascular Exercise:</strong> 30-45 minutes of a mix of moderate to high-intensity cardio.</li>
+                    <li><strong>Strength Training:</strong> Incorporate resistance training with weights or resistance bands, targeting major muscle groups. 2-3 sessions per week.</li>
+                </ul>
+            </td>
+            <td>
+                
+                <ul>
+                    <li><strong>Cardiovascular Exercise:</strong> 30-45 minutes of moderate to high-intensity cardio, consider interval training.</li>
+                    <li><strong>Strength Training:</strong> Focus on cardiovascular exercise and strength training. Include compound exercises. 3-4 sessions per week.</li>
+                </ul>
+            </td>
+            <td>
+                
+                <ul>
+                    <li><strong>Cardiovascular Exercise:</strong> 45-60 minutes of moderate to high-intensity cardio. Incorporate a variety of activities.</li>
+                    <li><strong>Strength Training:</strong> Include both resistance training and bodyweight exercises. Gradually increase intensity and duration. 3-4 sessions per week.</li>
+                </ul>
+            </td>
+        </tr>
+    </table><br><br><br>
+    <hr/>
+  <div id="pvr0">
+        <h1 style="color:green">Workout Plan for BMI Below Normal</h1>
+		<img src="https://static.toiimg.com/thumb/104350083.cms?width=400&height=300&resizemode=4&imgsize=57830" id="c1" height="200px" width="250px"/>
+        <h2 style="color:red">Cardiovascular Exercise:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> 20 minutes of brisk walking</li>
+            <li><strong>Day 2:</strong> 20 minutes of cycling</li>
+            <li><strong>Day 3:</strong> 15 minutes of light jogging</li>
+        </ul>
+    
+        <h2 style="color:green">Strength Training - Bodyweight Exercises:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> Bodyweight squats (3 sets of 10-12 reps)</li>
+            <li><strong>Day 2:</strong> Push-ups (3 sets of 8-10 reps)</li>
+            <li><strong>Day 3:</strong> Plank exercise (hold for 30 seconds, repeat 3 times)</li>
+        </ul>
+        <br><br><hr/>
+    
+</div>
+    <div id="pvr1">
+        <h1 style="color:green">Workout Plan for Normal BMI</h1>
+		<div class="image-container" id="slideshow">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdV2DdpP1JCWD7fCpjEOSee6D_cI5-bN8_5w&usqp=CAU" height="200px" width="550px" />
+        <img src="data:image/jpeg;base64,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" height="200px" width="550px" />
+		<img src="data:image/jpeg;base64,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" height="200px" width="550px" />
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtvmR-HZztQPOs3yTOMPXW_eozkw8UK9AeQ&usqp=CAU" height="200px" width="550px"" />
+		
+		</div>
+		<h2 style="color: red">Cardiovascular Exercise:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> 30 minutes of running or brisk walking</li>
+            <li><strong>Day 2:</strong> 20 minutes of cycling</li>
+            <li><strong>Day 3:</strong> 30 minutes of swimming or other aerobic activity</li>
+        </ul>
+    
+        <h2 style="color:red">Strength Training:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> Squats (3 sets of 10-12 reps)</li>
+            <li><strong>Day 2:</strong> Push-ups (3 sets of 10-12 reps)</li>
+            <li><strong>Day 3:</strong> Dumbbell Rows (3 sets of 10-12 reps per arm)</li>
+        </ul>
+        <br><br><hr/>
+    </div>
+
+    <div id="pvr2">
+        <h1 style="color:green">Workout Plan for BMI in Overweight Range</h1>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB0p0cRYqYHI-pvukgqvhQ-WLH7Vhj4Qaqaw&usqp=CAU" height="200px" width="250px" />
+        <h2 style="color:red">Cardiovascular Exercise:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> 30 minutes of brisk walking or cycling</li>
+            <li><strong>Day 2:</strong> 20 minutes of high-intensity interval training (HIIT)</li>
+            <li><strong>Day 3:</strong> 30 minutes of swimming or other aerobic activity</li>
+        </ul>
+    
+        <h2 style="color:red">Strength Training:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> Squats (3 sets of 10-12 reps)</li>
+            <li><strong>Day 2:</strong> Push-ups (3 sets of 10-12 reps)</li>
+            <li><strong>Day 3:</strong> Dumbbell Rows (3 sets of 10-12 reps per arm)</li>
+        </ul>
+    
+        <h2 style="color:red">Additional Activities:</h2>
+        <ul>
+            <li><strong>Day 4:</strong> 30 minutes of moderate-intensity cardio (e.g., brisk walking)</li>
+            <li><strong>Day 5:</strong> Bodyweight exercises (e.g., lunges, planks)</li>
+        </ul>
+        <br><br><hr/>
+    </div>
+<div>
+    <div id="pvr3">
+        <h1 style="color:green">Workout Plan for BMI in Obese Range</h1>
+		<div class="image-container1" id="slideshow1">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTw3JQuvoPcoB2C0E7W0JsuemZ7Cwf376Swl0bG69eTCwzFWDTCXN1cAQVNHDZRnajrXc&usqp=CAU" height="200px" width="550px;" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQydbrgiEcOYyZD7GOP7eiXxmaBGYM2OXXdgA&usqp=CAU" height="200px" width="550px" />
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0otqxAf9sf9M26cXXuRNnJFJQr4TLQ6wErg&usqp=CAU" height=" 200px"width="550px" />
+		<!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcYtdPS6pxsKaz97i3Mu0va_V0x9DqQ5eEYA&usqp=CAU" height="" width="" />-->
+		<img src="data:image/jpeg;base64,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" height="200px" width="550px" />
+		
+		</div>
+		
+		
+		<h2 style="color:red">Cardiovascular Exercise:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> 45 minutes of brisk walking or cycling</li>
+            <li><strong>Day 2:</strong> 30 minutes of swimming or water aerobics</li>
+            <li><strong>Day 3:</strong> 20 minutes of high-intensity interval training (HIIT)</li>
+        </ul>
+    
+        <h2 style="color:red">Strength Training:</h2>
+        <ul>
+            <li><strong>Day 1:</strong> Bodyweight squats (3 sets of 12-15 reps)</li>
+            <li><strong>Day 2:</strong> Modified push-ups (elevated or against a wall) (3 sets of 10-12 reps)</li>
+            <li><strong>Day 3:</strong> Seated leg press or chair squats (3 sets of 10-12 reps)</li>
+        </ul>
+    
+        <h2 style="color:red">Flexibility and Mobility:</h2>
+        <ul>
+            <li><strong>Every Day:</strong> Include dynamic stretches and yoga poses for flexibility and mobility.</li>
+        </ul>
+    
+        <h2 style="color:red">Additional Activities:</h2>
+        <ul>
+            <li><strong>Day 4:</strong> 30 minutes of low-impact cardio (e.g., stationary cycling)</li>
+            <li><strong>Day 5:</strong> Bodyweight exercises for the upper body (e.g., seated dips, arm circles)</li>
+        </ul>   
+        <br><br>
+    </div>
+    <hr/>
+    
+    <p><strong style="color:red">Important Tips:</strong></p>
+    <ul>
+        <li>Always start with a warm-up and finish with a cool-down.</li>
+        <li>Listen to your body and progress at your own pace.</li>
+        <li>Stay hydrated and maintain a balanced diet.</li>
+        <li>Consistency is key – aim for regular, sustainable exercise.</li>
+    </ul>
+
+</body>
+</html>
+    

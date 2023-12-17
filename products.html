@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness Equipment Store</title>
+        <style>
+            body {
+                font-family:'Times New Roman', Times, serif;
+                margin: 0;
+                padding: 0;
+                color: white;
+                background-color: #f4f4f4;
+                background-image: url("E:\\myactproject\\homebg.avif"); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+                background-size: cover; /* Adjust the background size as needed */
+                background-position: center;
+            }
+    
+            nav {
+                text-align: center;
+                overflow: hidden;
+                padding: 10px;
+            }
+    
+            nav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+    
+            nav a:hover {
+                background-color: white;
+                color: black;
+            }
+    
+            .product {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: #fff;
+                padding: 15px;
+                color: black;
+                margin: 15px;
+                text-align: center;
+                display: inline-block;
+                width: 30%;
+                box-sizing: border-box; /* Ensures padding and border are included in the total width */
+                flex: 1; /* Use flex property for equal size */
+            }
+            #div1{
+                float: left; /* Float the main block to the left */
+                width: 70%;   /* Adjust the width as needed */
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+            #div2{
+                float: right; /* Float the side blocks to the left */
+                width: 20%;   /* Adjust the width as needed */
+                padding: 20px;
+                background-color: #e0e0e0;
+                position: static;
+            }
+            footer {
+                color: #fff;
+                text-align: center;
+                padding: 1em 0;
+                bottom: 0;
+                width: 100%;
+            }
+            
+            #bd{
+                margin-top: 50px; 
+                 padding: 20px;
+                 overflow: hidden;
+                 
+            }
+            #items{
+                color: black;
+                font-size: medium;
+            }
+			.cart {
+            float: right; 
+            margin-right: 50px;
+            padding: 20px;
+            overflow: hidden;
+        }
+			#placeOrderButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            animation: changeColor 20s infinite; /* Run the changeColor animation infinitely */
+        }
+
+        @keyframes changeColor {
+            0% { background-color: red; }
+            33.33% { background-color: blue; }
+            66.66% { background-color: green; }
+            100% { background-color: red; }
+        }
+		
+        </style>
+        <!-- ... (previous HTML code) ... -->
+
+<script>
+    let cartItems = [];
+    let cartTotal = 0;
+
+    function addToCart(itemName, itemPrice) {
+        cartItems.push({ name: itemName, price: itemPrice });
+        cartTotal += itemPrice;
+
+        // Update the cart display
+        updateCartDisplay();
+    }
+
+    function placeOrder() {
+        if (cartItems.length > 0) {
+            const name = prompt('Enter your name:');
+            const mobile = prompt('Enter your mobile number:(numbers only)');
+            const villageCode = prompt('Enter your village code:(numbers only)');
+
+            if (
+            name &&
+            /^\d{10}$/.test(mobile) &&
+            /^\d{6}$/.test(villageCode)
+        ) {
+                alert(`Thanks for buying, ${name}! `+`we will deliver it within 3 or 4 days            Note:if you buy any Kettlebell Set or Dumbbells
+then they deliverd what you mentioned sizes dont worryyyy...!`);
+
+                // Clear the cart after placing the order
+                cartItems = [];
+                cartTotal = 0;
+
+                // Update the cart display
+                updateCartDisplay();
+            } else {
+                alert('Please enter all required information.');
+            }
+        } else {
+            alert('Your cart is empty. Add items before placing an order.');
+        }
+    }
+
+    function updateCartDisplay() {
+        const cartItemsElement = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+
+        // Clear previous content
+        cartItemsElement.innerHTML = '';
+
+        // Populate cart items
+        cartItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            cartItemsElement.appendChild(listItem);
+        });
+
+        // Update total
+        cartTotalElement.textContent = cartTotal.toFixed(2);
+    }
+</script>
+<!-- ... (remaining HTML code) ... -->
+
+    </head>
+<body>
+    <table>
+        <tr>
+            <td style="padding-bottom: 0px;">
+                <video width="140" height="90" autoplay loop muted>
+                    <source src="E:\myactproject\fh.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td style="padding-left: 100px;">
+                <nav>
+                    <a href="./home.html">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./workoutplan.html">Workout Plan</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+            </td>
+        </tr>
+    </table>
+    <hr/>
+   <div class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: Rs:<span id="cart-total">0.00</span></p>
+    <button id="placeOrderButton" onclick="placeOrder()">Place Order</button>
+</div>
+
+        <div id="div1">
+            <h3 align="center" style="color:black;font-size: 25px;">EQUIPMENTS</h3>
+            <hr/>
+            <div class="product">
+                <h2 >Treadmill</h2>
+                <img src="E:\myactproject\threadmill.avif" alt="Treadmill Image" width="200">
+                <p>High-quality treadmill for effective cardio workouts.</p>
+                <p>RS 24999/-</p>
+                
+                <button onclick="addToCart('Treadmill', 24999)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h2>Dumbbells</h2>
+                <img src="E:\myactproject\dumbbell.jpg" alt="Dumbbells Image" width="200">
+                <p>Set of adjustable dumbbells for strength training.</p>
+                <p>Dumbell Weights:&nbsp;&nbsp;
+                    <select>
+                        <option value="2.5">2.5</option>
+                        <option value="5">5</option>
+                        <option value="7.5">7.5</option>
+                        <option value="10">10</option>
+                        <option value="12.5">12.5</option>
+                    </select>
+                </p>
+                
+                <p>RS 1299/-</p>
+                <button onclick="addToCart('Dumbell Weights', 1299)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h2>Yoga Mat</h2>
+                <img src="E:\myactproject\yogamat.jpg" alt="Yoga Mat Image" width="200">
+                <p>Comfortable and durable yoga mat for your yoga sessions.</p>
+                <p>RS 499/-</p>
+                
+                <button onclick="addToCart('Yoga Mat', 499)">Add to Cart</button>
+            </div>
+
+            
+            <div class="product">
+                <h2>Stationary Bike</h2>
+                <img src="E:\myactproject\sb.png" alt="Stationary Bike Image" width="200">
+                <p>Indoor stationary bike for low-impact cardio workouts.</p>
+                <p>RS 23099/-</p>
+                
+                <button onclick="addToCart('Stationary Bike', 23099)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h2>Kettlebell Set</h2>
+                <img src="E:\myactproject\kb.jpg" alt="Kettlebell Set Image" width="200">
+                <p>Complete set of kettlebells for full-body strength training.</p>
+                <p>RS 799/-</p>
+                <p>Kettlebell Weights:&nbsp;&nbsp;
+                    <select>
+                        <option value="2.5">2.5</option>
+                        <option value="5">5</option>
+                        <option value="7.5">7.5</option>
+                        <option value="10">10</option>
+                        <option value="12.5">12.5</option>
+                    </select>
+                </p>
+                
+                <button onclick="addToCart('Kettlebell Set', 799)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h2>Resistance Bands</h2>
+                <img src="E:\myactproject\rb.webp" alt="Resistance Bands Image" width="200">
+                <p>Set of resistance bands for versatile strength workouts.</p>
+                <p>RS 249/-</p>
+                
+                <button onclick="addToCart('Kettlebell Set', 249)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

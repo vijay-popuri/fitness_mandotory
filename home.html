@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness Equipment Store</title>
+        <style>
+			body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: #f4f4f4;
+            background-image: url("E:\\myactproject\\homebg.avif");
+            background-size: cover;
+            background-position: center;
+        }
+    
+           nav {
+            text-align: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            font-size: larger;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        #but {
+            font-size: medium;
+        }
+
+        td {
+            color: #ddd;
+        }
+        </style>
+        <script>
+            function calculateBMI() {
+             var height = document.getElementById('height').value;
+    var weight = document.getElementById('weight').value;
+    var resultElement = document.getElementById('result');
+
+    
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        resultElement.innerHTML = 'Please enter valid positive numeric values for height and weight.';
+    } else if (!Number.isInteger(parseFloat(height)) || !Number.isInteger(parseFloat(weight))) {
+       
+        resultElement.innerHTML = 'Please enter whole numbers for height and weight.';
+    } else if (height > 300 || height < 20 || weight > 200 || weight < 10) {
+        
+        resultElement.innerHTML = 'You are not able to find BMI right now.';
+    } else {
+        
+        var heightInMeters = height / 100;
+        var sq = heightInMeters * heightInMeters;
+        var bmi = weight / sq;
+
+        var bmiCategory = bmiCat(bmi);
+        resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Your BMI Category is: ' + bmiCategory;
+    }
+}
+            function bmiCat(bmi)
+            {
+                var bmiCategory;
+                if (bmi < 18.5) {
+                    bmiCategory = 'Underweight';
+                } else if (bmi >= 18.5 && bmi < 24.9) {
+                    bmiCategory = 'Normal Weight';
+                } else if (bmi >= 25 && bmi < 29.9) {
+                    bmiCategory = 'Overweight';
+                } else {
+                    bmiCategory = 'Obese';
+                } 
+                return bmiCategory;
+            }
+            function generateDietPlan() {
+            // Get height and weight input values
+            var height = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+
+            
+			
+            var heightInMeters = (height / 100);
+
+            
+            var bmi = weight / (heightInMeters * heightInMeters);
+
+            
+            
+            var bmiCategory = bmiCat(bmi)
+
+            
+            var dietPlan = '';
+            switch (bmiCategory) {
+                case 'Underweight':
+                    dietPlan = 'Good quality PROTEIN such as\n lean red meat, chicken, fish eggs and dairy foods';
+                    break;
+                case 'Normal Weight':
+                    dietPlan = 'Emphasizes fruits, vegetables, whole grains, and fat-free or low-fat milk and milk products.';
+                    break;
+                case 'Overweight':
+                    dietPlan = 'This type of diet plan to reduce obesity focuses on foods that contain whole grains, fruits and vegetables.';
+                    break;
+                case 'Obese':
+                    dietPlan = 'Choose minimally processed, whole foods-whole grains, vegetables, fruits, nuts, healthful sources of protein (fish, poultry, beans), and plant oils.';
+                    break;
+                default:
+                    dietPlan = 'Unable to generate a diet plan. Please check your input values.';
+                    break;
+            }
+
+            
+            var dietPlanElement = document.getElementById('dietPlan');
+            <!--dietPlanElement.innerHTML = '<h2>Your Diet Plan:</h2><p>' + dietPlan + '</p>';-->
+			
+			var newWindow = window.open('', '_blank', 'width=300,height=400');
+            var dietPlanContent = '<h2 style="color: #008080;">Your Diet Plan:</h2><p>' + dietPlan + '</p>';
+            newWindow.document.write(dietPlanContent);
+        }
+        </script>
+    </head>
+<body>
+   <table>
+        <tr>
+            <td style="padding-bottom: 0px;">
+                <video width="140" height="90" autoplay loop muted>
+                    <source src="E:\myactproject\fh.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td style="padding-left: 100px;">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./workoutplan.html">Workout Plan</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+            </td>
+        </tr>
+    </table>
+    <hr/><br/>
+    <h2 style="padding-left: 60px;">What is BMI ?</h2>
+    <p style="padding-left: 60px; color: white;font-size: 20px;text-align:left;">
+        BMI, or Body Mass Index, is a numerical measure of a person's body weight in relation to their height. <br>
+        It is a commonly used screening tool to categorize individuals into different weight status categories
+        and assess potential health risks associated with weight.
+    </p>
+    <section>
+       <table border="4px" style="border-collapse: collapse;border-radius: 0vmax; border-style: solid;border-color: white;" align="center" cellpadding="100px">
+            <tr>
+                <td>
+                    
+                    <div style="text-align: left;">
+                        
+                    <h1>BMI Calculator</h1><br>
+                    <form id="bmiForm">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" placeholder="Enter height in cm" required><br><br>
+                
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" id="weight" placeholder="Enter weight in kg" required><br><br><br>
+                
+                        <button type="button" id="but" onclick="calculateBMI()">Calculate BMI</button>
+                    </form>
+                    </div>
+                </td>
+                <td>
+                    <div style="font-size: larger;">
+                        <h2>BMI Result:</h2>
+                        <p id="result"></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <hr/>
+        <div style="text-align: center;color: white;">
+            <h1 >Suggestion For a Diet Plan based upon BMIndex</h1><br>
+            <button type="button" id="but" onclick="generateDietPlan()">Suggest</button>
+			
+            <div id="dietPlan" style="font-size: 23px;"></div>
+        </div>
+    </section>
+
+    <footer>
+        Contact Owner <br>
+        Mobile Number: +91 9988776655
+
+    </footer>
+</body>
+</html>

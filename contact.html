@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+		body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: #f4f4f4;
+            background-image: url("E:\\myactproject\\homebg.avif");
+            background-size: cover;
+            background-position: center;
+			}
+    .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+		h2 {
+            color: #333;
+        }
+           nav {
+            text-align: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            font-size: larger;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        #but {
+            font-size: medium;
+        }
+
+        td {
+            color: #ddd;
+        }
+
+                .contact-container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 350px;
+            height: 200px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+			margin-left:450px;
+			marigin-top:80px;
+        }
+
+
+        
+
+        p {
+            margin-bottom: 16px;
+            color: #555;
+        }
+
+        #homeButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        td {
+            color: #ddd;
+        }
+
+        #pvr {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+		form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+		input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+		 button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+		button:hover {
+            background-color: #45a049;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .facebook {
+            background-color: #1877f2;
+        }
+
+        .instagram {
+            background-color: #E4405F;
+        }
+
+        .owner-info {
+            text-align: center;
+            margin-top: 30px;
+            color: #555;
+        }
+		label{
+		color:red;
+		}
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td style="padding-bottom: 0px;">
+                <video width="140" height="90" autoplay loop muted>
+                    <source src="E:\myactproject\fh.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td style="padding-left: 100px;">
+                <nav>
+                    <a href="./home.html">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./workoutplan.html">Workout Plan</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+    <h2 style="color:orange">Contact Us</h2>
+
+    <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="social-links">
+        <a href="https://wa.me/8143169416" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://www.facebook.com/yourpage" target="_blank" class="facebook">Facebook</a>
+        <a href="https://www.instagram.com/youraccount" target="_blank" class="instagram">Instagram</a>
+    </div>
+
+    <div class="owner-info">
+        <p style="color:aqua">Owner: P.Vijay</p>
+        <p style="color:pink">Mobile: +91 8143169415</p>
+    </div>
+</div>
+
+
+    
+</body>
+</html>
