@@ -11,7 +11,7 @@
             padding: 0;
             color: white;
             background-color: #f4f4f4;
-            background-image: url("homebg.avif");
+            background-image: url("E:\\myactproject\\homebg.avif");
             background-size: cover;
             background-position: center;
 			}
@@ -186,13 +186,21 @@
 		}
 
     </style>
+	<script>
+		function fun()
+		{
+			var a=document.getElementById("name").value;
+			
+			alert("Thanks for submiting " +a);
+		}
+	</script>
 </head>
 <body>
     <table>
         <tr>
             <td style="padding-bottom: 0px;">
                 <video width="140" height="90" autoplay loop muted>
-                    <source src="fh.mp4" type="video/mp4">
+                    <source src="E:\myactproject\fh.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </td>
@@ -219,8 +227,10 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onclick="fun()">Submit</button>
     </form>
+	<div id="pvr">
+	</div>
 
     <div class="social-links">
         <a href="https://wa.me/8143169416" target="_blank" class="whatsapp">WhatsApp</a>
