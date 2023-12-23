@@ -187,12 +187,12 @@
 
     </style>
 	<script>
-		function fun()
-		{
-			var a=document.getElementById("name").value;
-			
-			alert("Thanks for submiting " +a);
-		}
+		function fun(event) {
+    event.preventDefault(); // Prevent the default form submission
+    var a = document.getElementById("name").value;
+    alert("Thanks for submitting " + a);
+}
+
 	</script>
 </head>
 <body>
